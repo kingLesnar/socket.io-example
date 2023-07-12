@@ -18,3 +18,11 @@ io.on("connection", function (socket) {
     io.emit("message", msg);
   });
 });
+
+io.on("secondConnection", function (socket) {
+  console.log("second socket connected .....");
+  socket.on("secondMessage", function (msg) {
+    console.log("secondMessage: --------- " + msg);
+    io.emit("secondMessage", msg);
+  });
+});
