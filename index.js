@@ -17,6 +17,10 @@ io.on("connection", function (socket) {
     console.log("message: --------- " + msg);
     io.emit("message", msg);
   });
+
+  socket.on("typing", function (message) {
+    io.emit("typing", message);
+  });
 });
 
 io.on("secondConnection", function (socket) {
