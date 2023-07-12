@@ -2,7 +2,7 @@ const app = require("express")();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
 
-app.get("/message", (req, res) => res.send("Welcome to socket.io"));
+app.get("/message", (req, res) => res.send("message to socket.io"));
 app.get("/", (req, res) => res.send("Welcome to socket.io"));
 
 // io.on("connection", function (socket) {
