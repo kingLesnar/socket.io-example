@@ -12,6 +12,7 @@ app.get("/", (req, res) => res.send("Welcome to socket.io"));
 http.listen(3000, () => console.log("listening on http://localhost:3000"));
 let message = "message";
 io.on("connection", function (socket) {
+  let players = {};
   console.log("socket connected .....", socket.id);
   socket.on(message, function (player) {
     players[socket.id] = player;
