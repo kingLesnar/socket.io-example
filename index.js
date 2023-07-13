@@ -12,10 +12,16 @@ app.get("/", (req, res) => res.send("Welcome to socket.io"));
 http.listen(3000, () => console.log("listening on http://localhost:3000"));
 let message = "message";
 io.on("connection", function (socket) {
-  console.log("socket connected .....", socket);
-  socket.on(message, function (msg) {
-    console.log("message: --------- " + msg);
-    io.emit("message", msg);
+  console.log("socket connected .....", socket.id);
+  socket.on(message, function (player) {
+    players[socket.id] = player;
+
+    console.log(
+      "Player " + player.userName + " with id: " + socket.id + " has joined.",
+    );
+    // console.log("inside chekcing socket.....", socket);
+    // console.log("message: --------- " + player);
+    io.emit("message", player);
   });
 
   socket.on("typing", function (message) {
