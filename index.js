@@ -13,7 +13,7 @@ http.listen(3000, () => console.log("listening on http://localhost:3000"));
 let message = "wow";
 io.on("connection", function (socket) {
   console.log("socket connected .....");
-  socket.on(`${message}`, function (msg) {
+  socket.on(message, function (msg) {
     console.log("message: --------- " + msg);
     io.emit("message", msg);
   });
@@ -24,7 +24,7 @@ io.on("connection", function (socket) {
 });
 
 io.on("secondConnection", function (socket) {
-  console.log("second socket connected .....");
+  console.log("second socket connected .....", socket);
   socket.on("secondMessage", function (msg) {
     console.log("secondMessage: --------- " + msg);
     io.emit("secondMessage", msg);
