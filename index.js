@@ -10,9 +10,9 @@ app.get("/", (req, res) => res.send("Welcome to socket.io"));
 // });
 
 http.listen(3000, () => console.log("listening on http://localhost:3000"));
-let message = "wow";
+let message = "message";
 io.on("connection", function (socket) {
-  console.log("socket connected .....");
+  console.log("socket connected .....", socket);
   socket.on(message, function (msg) {
     console.log("message: --------- " + msg);
     io.emit("message", msg);
