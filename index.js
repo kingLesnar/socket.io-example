@@ -104,10 +104,6 @@ io.on("connection", function (socket) {
     score = GameEnded.score;
     console.log(score);
   });
-
-  socket.on("typing", function (message) {
-    io.emit("typing", message);
-  });
 });
 
 // io.on("connection", function (socket) {
