@@ -106,12 +106,4 @@ io.on("connection", function (socket) {
   });
 });
 
-// io.on("connection", function (socket) {
-//   console.log("second socket connected .....", socket);
-//   socket.on("secondMessage", function (msg) {
-//     console.log("secondMessage: --------- " + msg);
-//     io.emit("secondMessage", msg);
-//   });
-// });
-
 // --------------------------------------------------------------------
