@@ -102,7 +102,7 @@ io.on("connection", function (socket) {
     players[socket.id] = GameEnded;
 
     score = GameEnded.score;
-    console.log(score);
+    console.log("scoreeeeeeee", GameEnded);
   });
 });
 
