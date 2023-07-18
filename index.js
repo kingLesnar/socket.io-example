@@ -104,18 +104,12 @@ io.on("connection", function (socket) {
     players[socket.id] = GameEnded;
 
     score = GameEnded.score;
-    console.log("scoreeeeeeee", GameEnded.score);
-
-    io.emit("GameEnded", "your score is " + score);
+    console.log("scoreeeeeeee", GameEnded.GameEnded.score);
+  });
+  socket.on("userLeft", function (data) {
+    console.log("userLeft", `this user ${data.name} has left the game`);
+    // io.emit("UserLeft", `this user ${data.name} has left the game`);
   });
 });
 
 // --------------------------------------------------------------------
-
-io.on("connection", function (Game) {
-  console.log("yoyoyoyoyoy");
-  Game.on("GamePadd", function (Somefunc) {
-    const gp = navigator.getGamepads()[0];
-    console.log("Gapeing connected", gp.connected);
-  });
-});
