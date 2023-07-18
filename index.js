@@ -1,3 +1,5 @@
+const { Socket } = require("socket.io");
+
 const app = require("express")();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
@@ -102,8 +104,18 @@ io.on("connection", function (socket) {
     players[socket.id] = GameEnded;
 
     score = GameEnded.score;
-    console.log("scoreeeeeeee", GameEnded.GameEnded.score);
+    console.log("scoreeeeeeee", GameEnded.score);
+
+    io.emit("GameEnded", "your score is " + score);
   });
 });
 
 // --------------------------------------------------------------------
+
+io.on("connection", function (Game) {
+  console.log("yoyoyoyoyoy");
+  Game.on("GamePadd", function (Somefunc) {
+    const gp = navigator.getGamepads()[0];
+    console.log("Gapeing connected", gp.connected);
+  });
+});
