@@ -95,14 +95,14 @@ io.on("connection", function (socket) {
       "Player " + player.name + " with id: " + socket.id + " has joined.",
     );
 
-    io.emit("message", Questions);
+    io.emit("Questions", Questions);
   });
 
   socket.on("GameEnded", function (GameEnded) {
     players[socket.id] = GameEnded;
 
     score = GameEnded.score;
-    console.log("scoreeeeeeee", GameEnded);
+    console.log("scoreeeeeeee", GameEnded.GameEnded.score);
   });
 });
 
