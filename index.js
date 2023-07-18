@@ -107,7 +107,8 @@ io.on("connection", function (socket) {
     console.log("scoreeeeeeee", GameEnded.GameEnded.score);
   });
   socket.on("userLeft", function (data) {
-    console.log("userLeft", `this user ${data.name} has left the game`);
+    console.log(`this user  has left the game`);
+    console.log(`this user ${data.name} has left the game`);
     // io.emit("UserLeft", `this user ${data.name} has left the game`);
   });
 });
